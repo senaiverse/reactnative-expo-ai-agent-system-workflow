@@ -1,4 +1,4 @@
-# Claude Code Agent System for Expo/React Native
+# AI Agent System for Expo/React Native
 
 <div align="center">
 
