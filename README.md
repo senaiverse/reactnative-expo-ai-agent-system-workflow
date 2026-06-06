@@ -6,7 +6,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.2.0-blue.svg?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)
-![Platform](https://img.shields.io/badge/platform-Windows-0078D6.svg?style=flat-square&logo=windows)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-0078D6.svg?style=flat-square&logo=windows)
 ![Claude Code](https://img.shields.io/badge/Claude_Code-v2.0.5+-FF6B35.svg?style=flat-square)
 ![Expo](https://img.shields.io/badge/Expo-SDK_50+-000020.svg?style=flat-square&logo=expo)
 ![React Native](https://img.shields.io/badge/React_Native-0.74+-61DAFB.svg?style=flat-square&logo=react)
@@ -14,7 +14,7 @@
 
 **Your complete AI-powered development toolkit for React Native mobile apps**
 
-[Quick Start](#-quick-start-10-minutes) • [Documentation](#-documentation) • [Installation](#-installation) • [What You Get](#-what-you-get) • [Real-World Impact](#-real-world-impact) • [Contributing](#-contributing) • [License](#-license) • [Author](#-author)
+[Quick Start](#-quick-start-10-minutes) • [Documentation](#-documentation) • [Installation](#-installation) • [What You Get](#-what-you-get) • [Real-World Impact](#-real-world-impact) • [...]
 
 </div>
 
@@ -24,11 +24,11 @@
 
 A production-ready system of **7 core AI agents (20-agent design)** + **3 slash commands** + automation hooks for building **React Native mobile apps** faster with fewer bugs.
 
-> **📱 Built specifically for React Native/Expo mobile development.** While the system can be adapted for other frameworks, all agents, prompts, and workflows are optimized for iOS/Android mobile platforms with mobile-first considerations throughout the agent system.
+> **📱 Built specifically for React Native/Expo mobile development.** While the system can be adapted for other frameworks, all agents, prompts, and workflows are optimized for iOS/Android mobile development.
 
 **Built for:**
 - Claude Code CLI v2.0.5
-- Windows environments
+- Windows, macOS, and Linux environments
 - Cursor terminal users
 - Expo SDK 50+ / React Native 0.74+
 
@@ -88,6 +88,7 @@ This isn't theoretical - it's battle-tested on production apps with 10K+ users.
 **Core Technologies:**
 
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-Installation_Scripts-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-Agent_Configs-000000?style=for-the-badge&logo=markdown&logoColor=white)
 ![YAML](https://img.shields.io/badge/YAML-Configuration-CB171E?style=for-the-badge&logo=yaml&logoColor=white)
 
@@ -105,12 +106,15 @@ This isn't theoretical - it's battle-tested on production apps with 10K+ users.
 **Development Tools:**
 
 ![Windows](https://img.shields.io/badge/Windows-10/11-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![macOS](https://img.shields.io/badge/macOS-10.15+-999999?style=for-the-badge&logo=apple&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-Ubuntu/Debian-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Cursor](https://img.shields.io/badge/Cursor-IDE-000000?style=for-the-badge)
 ![Git](https://img.shields.io/badge/Git-Version_Control-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 **Key Skills Demonstrated:**
 - AI Agent System Architecture
 - PowerShell Automation & Scripting
+- Bash/Shell Scripting & Cross-Platform Development
 - React Native/Expo Mobile Development
 - WCAG 2.2 Accessibility Standards
 - OWASP Mobile Security Practices
@@ -126,22 +130,31 @@ This isn't theoretical - it's battle-tested on production apps with 10K+ users.
 
 ### 2. Install (Interactive Mode - Easiest!)
 
-```powershell
-# Run the installer
-cd claude-code-expo-system\scripts
-.\install-agents.ps1
+**Choose your platform:**
 
-# It will ask you:
-# 1️⃣ Project-scoped (team sync) OR 2️⃣ Global (personal use)?
+**macOS/Linux:**
+```bash
+cd claude-code-expo-system/scripts
+chmod +x ./install-agents.sh
+./install-agents.sh
 ```
 
-**Or skip prompts with parameters:**
+**Windows:**
 ```powershell
+cd claude-code-expo-system\scripts
+.\install-agents.ps1
+```
+
+**It will ask you:**
+- 1️⃣ Project-scoped (team sync) OR 2️⃣ Global (personal use)?
+
+**Or skip prompts with parameters:**
+```bash
 # Force project scope (no prompts)
-.\install-agents.ps1 -Scope project
+./install-agents.sh --scope project
 
 # Force global scope (no prompts)
-.\install-agents.ps1 -Scope global
+./install-agents.sh --scope global
 ```
 
 ### 3. Test It
@@ -159,6 +172,7 @@ claude
 |------|---------|-----------|
 | **[START-HERE.md](START-HERE.md)** | Quick start guide | 5 min |
 | **[COMPLETE-GUIDE.md](COMPLETE-GUIDE.md)** | Full reference manual | 30-60 min |
+| **[PLATFORM-SPECIFIC-SETUP.md](PLATFORM-SPECIFIC-SETUP.md)** | OS-specific troubleshooting | 10-15 min |
 
 ---
 
@@ -204,7 +218,7 @@ Create additional custom commands as needed.
 - `CLAUDE.md` - Project context template
 - `settings.json` - Global/project configuration
 - Hook scripts for automation (optional)
-- Windows installation script
+- Cross-platform installation scripts (Windows PowerShell + macOS/Linux Bash)
 
 ---
 
@@ -239,6 +253,7 @@ claude-code-expo-system/
 ├── README.md                 ← You are here
 ├── START-HERE.md            ← Read this first
 ├── COMPLETE-GUIDE.md        ← Full documentation
+├── PLATFORM-SPECIFIC-SETUP.md ← OS-specific guides
 │
 ├── ready-to-use/
 │   ├── agents/              ← 20 agent configurations
@@ -258,14 +273,66 @@ claude-code-expo-system/
 │       └── settings.json
 │
 └── scripts/
-    └── install-agents.ps1   ← Windows installer
+    ├── install-agents.ps1   ← Windows (PowerShell) installer
+    ├── install-agents.sh    ← macOS/Linux (Bash) installer
+    ├── verify-before-install.sh    ← Pre-flight validation
+    ├── test-syntax.sh       ← Bash syntax validation (13 tests)
+    └── test-consistency.sh  ← Documentation consistency (7 tests)
 ```
 
 ---
 
 ## 🚀 Installation
 
-### Automatic Installation (Windows PowerShell)
+### Automatic Installation
+
+#### **macOS/Linux (Bash)**
+
+**Interactive Mode (Recommended - Easiest!)**
+
+The installer guides you through the process:
+
+```bash
+cd claude-code-expo-system/scripts
+chmod +x ./install-agents.sh  # Make executable (one time)
+./install-agents.sh
+
+# You'll see a menu:
+# 1️⃣ Project-Scoped (team sync via git)
+# 2️⃣ Global (personal use everywhere)
+
+# Choose 1 or 2, press Enter
+# If project: confirms package.json found, asks to proceed
+# Installs to the correct location
+```
+
+**Non-Interactive Mode (Skip Prompts)**
+
+**Project-Scoped (Recommended for Teams)**
+- Agents installed in project's `.claude/` folder
+- Version-controlled, team-shared via git
+
+```bash
+# Navigate to your Expo/React Native project
+cd /path/to/your/expo-project
+
+# Force project scope (no prompts)
+/path/to/claude-code-expo-system/scripts/install-agents.sh --scope project
+```
+
+**Global (Personal Use)**
+- Agents installed in `~/.claude/` folder
+- Available in all projects
+
+```bash
+# Force global scope (no prompts)
+cd claude-code-expo-system/scripts
+./install-agents.sh --scope global
+```
+
+---
+
+#### **Windows (PowerShell)**
 
 **Interactive Mode (Recommended - Easiest!)**
 
@@ -284,11 +351,7 @@ cd claude-code-expo-system\scripts
 # Installs to the correct location
 ```
 
----
-
 **Non-Interactive Mode (Skip Prompts)**
-
-For automation or when you know what you want:
 
 **Project-Scoped (Recommended for Teams)**
 - Agents installed in project's `.claude/` folder
@@ -454,20 +517,33 @@ cat ~/.claude/agents/tier-1-daily/design-token-guardian.md
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
+### Permission Denied (macOS/Linux)
+```bash
+# Make scripts executable
+chmod +x scripts/*.sh
+```
+
 ### Agents Not Auto-Invoking
 - Make description more specific in agent YAML
 - Manually invoke: `@agent-name`
 - Check COMPLETE-GUIDE.md troubleshooting section
 
+For platform-specific troubleshooting, see **[PLATFORM-SPECIFIC-SETUP.md](PLATFORM-SPECIFIC-SETUP.md)**
+
 ---
 
 ## 📊 System Requirements
 
+**Core:**
 - **Claude Code:** v2.0.5+
 - **Node.js:** 18.x or higher
-- **OS:** Windows 10/11 (WSL optional)
 - **IDE:** Cursor (or any terminal)
 - **Project:** Expo SDK 50+ or React Native 0.74+
+
+**Platform-Specific:**
+- **Windows:** PowerShell 5.1+ (or Bash via WSL/Git Bash)
+- **macOS:** Bash 4.0+ (or Zsh via bash shebang, macOS 10.15+)
+- **Linux:** Bash 4.0+ (Ubuntu, Debian, Fedora, CentOS, etc.)
 
 ---
 
@@ -475,6 +551,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 - **Quick Start:** START-HERE.md
 - **Full Guide:** COMPLETE-GUIDE.md
+- **Platform Setup:** PLATFORM-SPECIFIC-SETUP.md
 - **Claude Code Docs:** https://docs.claude.com/en/docs/claude-code
 - **Expo Docs:** https://docs.expo.dev
 - **React Native Docs:** https://reactnative.dev
@@ -488,8 +565,9 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ✅ 3 custom slash commands (expandable)
 ✅ Project template (CLAUDE.md)
 ✅ Global configuration (settings.json)
-✅ Interactive Windows installation script
-✅ Comprehensive documentation (9 markdown files)
+✅ Cross-platform installation scripts (Windows PowerShell + macOS/Linux Bash)
+✅ Pre-flight validation and test scripts
+✅ Comprehensive documentation (11 markdown files)
 ✅ Real-world examples and workflows
 ✅ Best practices guide
 ✅ Troubleshooting guide (40+ solutions)
@@ -501,7 +579,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 1. ✅ **You are here** - Read README
 2. 📖 Read **START-HERE.md** (5 min)
-3. ⚡ Run **install-agents.ps1**
+3. ⚡ Run **install-agents.ps1** (Windows) or **install-agents.sh** (macOS/Linux)
 4. 📋 Copy **CLAUDE.md** to your project
 5. 🚀 Start Claude Code and test agents
 6. 📘 Read **COMPLETE-GUIDE.md** for deep dive
@@ -517,8 +595,8 @@ This system represents **100+ hours of research** into:
 - Proven agent orchestration patterns
 
 **Built specifically for your stack:**
-- ✅ Claude Code CLI v2.0.5
-- ✅ Windows environment
+- ✅ Claude Code CLI v2.0.5+
+- ✅ Windows, macOS, and Linux environments
 - ✅ Cursor terminal
 - ✅ Expo/React Native mobile apps
 
@@ -542,7 +620,7 @@ Contributions, issues, and feature requests are welcome!
 
 **Guidelines:**
 - Follow existing agent file patterns (YAML frontmatter + markdown)
-- Test on Windows environment
+- Test on all platforms (Windows PowerShell, macOS Bash, Linux Bash)
 - Update documentation for new features
 - Include usage examples
 
@@ -550,10 +628,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 **Ideas for Contributions:**
 - Create additional specialized agents from the 20-agent design
-- Add support for macOS/Linux installation
+- ✅ ~~Add support for macOS/Linux installation~~ (COMPLETED in v1.2.0+)
 - Create custom slash commands for specific workflows
 - Improve existing agent prompts based on production experience
 - Add more real-world examples and case studies
+- Add GitHub Actions CI workflow for cross-platform testing
 
 ---
 
@@ -583,9 +662,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **About the Creator:**
 
-Experienced React Native developer passionate about AI-augmented development, mobile accessibility compliance, and building production-ready applications at scale. This project synthesizes 100+ hours of research into Claude Code agent architecture combined with real-world production experience from shipping 3+ mobile apps to App Stores with 10K+ active users. The system represents a systematic, battle-tested approach to solving recurring mobile development challenges through intelligent automation.
+Experienced React Native developer passionate about AI-augmented development, mobile accessibility compliance, and building production-ready applications at scale. This project synthesizes 100+ hours of research into proven patterns and workflows.
 
-**Mission:** Eliminate repetitive manual checks, enforce design consistency, ensure accessibility compliance, and maintain performance standards automatically—allowing developers to focus on building great user experiences.
+**Mission:** Eliminate repetitive manual checks, enforce design consistency, ensure accessibility compliance, and maintain performance standards automatically—allowing developers to focus on building features that users love.
 
 ---
 
@@ -603,17 +682,18 @@ Experienced React Native developer passionate about AI-augmented development, mo
 - **7 Core Agents** - Production-ready, battle-tested
 - **20-Agent System** - Complete design with templates
 - **3 Slash Commands** - Multi-agent workflows
-- **9 Documentation Files** - Comprehensive guides
+- **11 Documentation Files** - Comprehensive guides
 - **100+ Hours** - Research and development
 - **10K+ Users** - Production validation
 - **35% Bug Reduction** - Proven impact
 - **50% Faster Development** - Measured results
+- **Cross-Platform Support** - Windows, macOS, Linux
 
 ---
 
 **Version:** 1.2.0
-**Last Updated:** 2026-06-06
-**Optimized For:** Claude Code v2.0.5+ • Windows 10/11 • Cursor IDE • Expo SDK 50+ • React Native 0.74+
+**Last Updated:** 2026-06-07
+**Optimized For:** Claude Code v2.0.5+ • Windows/macOS/Linux • Cursor IDE • Expo SDK 50+ • React Native 0.74+
 
 ---
 
